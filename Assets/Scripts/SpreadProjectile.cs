@@ -29,11 +29,12 @@ public class SpreadProjectile : Projectile {
     }
 
 
-    public override void initiate(Transform trans, Vector3 offset, float speed) {
+    public override void initiate(Transform trans, Vector3 offset, float speed, GameObject src) {
         Vector3 shift = trans.rotation * offset;
 
         for (int i = 0; i < intensity; i++) {
             Projectile clone = Instantiate(this, trans.position + shift, trans.rotation) as Projectile;
+            clone.Source = src;
             clone.GetComponent<Rigidbody2D>().AddForce(trans.rotation * Vector3.up * speed);
             clone.GetComponent<Rigidbody2D>().AddForce(trans.rotation * Vector3.right * (Random.Range(-spread, spread)));
         }

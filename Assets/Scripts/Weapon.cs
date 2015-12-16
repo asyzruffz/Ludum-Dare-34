@@ -28,7 +28,7 @@ public class Weapon : MonoBehaviour {
 
     void OnShoot() {
         if (projectile) {
-            projectile.initiate(transform, nozzleOffset, bulletSpeed);
+            projectile.initiate(transform, nozzleOffset, bulletSpeed, gameObject);
         }
 
         holder.reload();

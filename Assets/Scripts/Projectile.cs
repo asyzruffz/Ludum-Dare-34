@@ -5,6 +5,8 @@ public class Projectile : MonoBehaviour {
 
     public float lifetime;
 
+    private GameObject source;
+
     // Use this for initialization
     protected virtual void Start () {
 	
@@ -26,10 +28,19 @@ public class Projectile : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    public virtual void initiate(Transform trans, Vector3 offset, float speed) {
+    public virtual void initiate(Transform trans, Vector3 offset, float speed, GameObject src) {
         Vector3 shift = trans.rotation * offset;
 
         Projectile clone = Instantiate(this, trans.position + shift, trans.rotation) as Projectile;
+        Source = src;
         clone.GetComponent<Rigidbody2D>().AddForce(trans.rotation * Vector3.up * speed);
+    }
+
+    public GameObject Source {
+        get {
+            return this.source;
+        } set {
+            this.source = value;
+        }
     }
 }

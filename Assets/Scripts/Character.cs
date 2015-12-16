@@ -41,4 +41,16 @@ public class Character : MonoBehaviour {
             }
         }
     }
+
+    public Controller Controller
+    {
+        get
+        {
+            return this.controller;
+        }
+        set
+        {
+            this.controller = value;
+        }
+    }
 }

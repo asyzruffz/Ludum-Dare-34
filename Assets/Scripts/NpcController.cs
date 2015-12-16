@@ -4,11 +4,10 @@ using System.Collections;
 public class NpcController : Controller {
 
     public float cooldown = 5f;
-    public float sightDistance = 5f;
+    public NpcBehaviour behaviour;
 
-    private bool noticed;
     private float timer = 0f;
-    private float angle2 = 0f;
+    //private float angle2 = 0f;
 
     // Use this for initialization
     void Start() {
@@ -22,6 +21,12 @@ public class NpcController : Controller {
             shoot();
         }
 
+        if (behaviour) {
+            if (behaviour.noticed) {
+                faceTowards(behaviour.targetPostion);
+            }
+        }
+
         /*cursor = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         angle2 += 5 * Time.fixedDeltaTime;
         direction.x = Mathf.Cos(angle2 % 360f);// cursor.x - transform.position.x;
@@ -33,21 +38,6 @@ public class NpcController : Controller {
             Debug.DrawRay(transform.position, direction, Color.green);*/                // useless code
 
         timer -= Time.deltaTime;
-
-        noticed = false;
-    }
-
-    void OnCollisionEnter2D(Collision2D target) {
-        if (target.gameObject.tag == "Player") {
-            noticed = true;
-        }
-    }
-
-    bool noticePlayer() {
-        bool seePlayer = Physics2D.CircleCast(new Vector2(transform.position.x, transform.position.y),
-                                                sightDistance, direction, 0f, 1 << LayerMask.NameToLayer("Entity"));
-
-        return seePlayer;
     }
 
     void shoot() {

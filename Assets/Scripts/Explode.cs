@@ -24,22 +24,37 @@ public class Explode : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D target){
-		if (target.gameObject.tag == "Deadly") {
-			OnExplode();
-		}
+        if (target.gameObject.tag == "Deadly") {
+            /*if(gameObject.tag == "Player") {
+                Reincarnate(target.gameObject.GetComponent<Projectile>().Source);
+            }*/
+
+            //StartCoroutine(BackToMenu());
+            OnExplode();
+        }
 	}
 
-	public void OnExplode(){
-		Destroy (gameObject);
+	public void OnExplode() {
+        Destroy(gameObject);
 
-		var t = transform;
+        var t = transform;
 
         for (int i = 0; i < totalSpray; i++) {
             Blood clone = Instantiate(blood, t.position, Quaternion.identity) as Blood;
 			clone.GetComponent<Rigidbody2D>().AddForce(Vector3.right * (Random.Range (-10, 10)));
 			clone.GetComponent<Rigidbody2D>().AddForce(Vector3.up * Random.Range(-10, 10));
 		}
-        
     }
 
+    void Reincarnate(GameObject newBody) {
+        PlayerController pc = newBody.AddComponent<PlayerController>();
+        Destroy(newBody.GetComponent("NpcController"));
+        newBody.GetComponent<Character>().Controller = pc;
+    }
+
+    IEnumerator BackToMenu() {
+        //OnExplode();
+        yield return new WaitForSeconds(3);
+        Application.LoadLevel("Menu");
+    }
 }
