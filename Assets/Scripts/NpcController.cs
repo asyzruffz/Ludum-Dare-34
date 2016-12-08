@@ -13,16 +13,23 @@ public class NpcController : Controller {
     }
 
     void Update() {
-        if (timer <= 0f) {
-            timer = cooldown;
-            shoot();
-        }
+		//By default, cursor is just in front of self
+		cursor = transform.position + transform.up;
 
         if (behaviour) {
             if (behaviour.noticed) {
-                faceTowards(behaviour.targetPostion);
+                cursor = behaviour.targetPostion;
             }
-        }
+		}
+
+		faceTowards(cursor);
+		moveTowards(cursor);
+
+		// Let them shoot repeatedly with cooldown
+		if (timer <= 0f) {
+			timer = cooldown;
+			shoot();
+		}
 
         timer -= Time.deltaTime;
     }

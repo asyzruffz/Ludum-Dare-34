@@ -12,13 +12,11 @@ public class CameraFollow : MonoBehaviour {
 		GetComponent<Camera>().orthographicSize = ((Screen.height / 2.0f) / PixelsPerUnit);
 	}
 
-	// Use this for initialization
 	void Start () {
         if(target)
             _t = target.transform;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if(_t)
 			transform.position = new Vector3 (_t.position.x, _t.position.y, transform.position.z);

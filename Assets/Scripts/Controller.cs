@@ -5,10 +5,10 @@ public class Controller : MonoBehaviour {
 
     public bool moving;
     public bool firing;
-    public Vector2 direction = new Vector2();
+    public Vector2 direction = new Vector2(0, 1);
     public Vector3 cursor = new Vector3();
 
-    private float angle = 0f;
+	protected float angle = 0f;
 
     protected void moveTowards(Vector2 target) {
         direction.x = target.x - transform.position.x;

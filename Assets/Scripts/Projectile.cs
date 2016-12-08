@@ -5,7 +5,8 @@ public class Projectile : MonoBehaviour {
 
     public float lifetime;
 
-    private GameObject source;
+	[HideInInspector]
+	public GameObject source;
 
     protected virtual void Start () {
 	
@@ -26,19 +27,12 @@ public class Projectile : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    public virtual void initiate(Transform trans, Vector3 offset, float speed, GameObject src) {
+    public virtual void Spawn(Transform trans, Vector3 offset, float speed, GameObject src) {
         Vector3 shift = trans.rotation * offset;
 
-        Projectile clone = Instantiate(this, trans.position + shift, trans.rotation) as Projectile;
-        Source = src;
-        clone.GetComponent<Rigidbody2D>().AddForce(trans.rotation * Vector3.up * speed);
-    }
-
-    public GameObject Source {
-        get {
-            return this.source;
-        } set {
-            this.source = value;
-        }
+        Projectile clone = Instantiate(this, trans.position + shift, trans.rotation);
+		clone.GetComponent<Rigidbody2D>().AddForce(trans.rotation * Vector3.up * speed);
+		source = src;
+		clone.transform.parent = source.transform;
     }
 }
