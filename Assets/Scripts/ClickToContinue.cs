@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ClickToContinue : MonoBehaviour {
 
@@ -23,7 +23,7 @@ public class ClickToContinue : MonoBehaviour {
         if (scene.Equals("Exit")) {
             Application.Quit();
         } else {
-            Application.LoadLevel(scene);
+			SceneManager.LoadScene (scene);
         }
 	}
 }

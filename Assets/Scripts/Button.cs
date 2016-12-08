@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour {
 
@@ -33,7 +33,7 @@ public class Button : MonoBehaviour {
     void LoadScene() {
         loadLock = true;
         if (scene.Length > 0) {
-            Application.LoadLevel(scene);
+			SceneManager.LoadScene (scene);
         } else {
             Application.Quit();
         }

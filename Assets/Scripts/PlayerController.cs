@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : Controller {
     
@@ -13,7 +13,7 @@ public class PlayerController : Controller {
         cursor = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetKey("escape")) {
-            Application.LoadLevel("Menu");
+			SceneManager.LoadScene ("Menu");
         }
 
         //if (Input.GetKey("space")) {

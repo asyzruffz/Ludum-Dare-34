@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Explode : MonoBehaviour {
@@ -55,6 +56,6 @@ public class Explode : MonoBehaviour {
     IEnumerator BackToMenu() {
         //OnExplode();
         yield return new WaitForSeconds(3);
-        Application.LoadLevel("Menu");
+		SceneManager.LoadScene ("Menu");
     }
 }

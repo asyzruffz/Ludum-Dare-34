@@ -7,12 +7,10 @@ public class Projectile : MonoBehaviour {
 
     private GameObject source;
 
-    // Use this for initialization
     protected virtual void Start () {
 	
 	}
 
-    // Update is called once per frame
     protected virtual void Update () {
         if (lifetime < -1f)
             return;

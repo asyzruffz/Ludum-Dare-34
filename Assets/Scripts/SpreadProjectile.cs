@@ -13,7 +13,7 @@ public class SpreadProjectile : Projectile {
     private float t = 0.0f;
 
     // Overwrite function from parent projectile class
-    protected virtual void Start() {
+	protected override void Start() {
         base.Start();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -21,7 +21,7 @@ public class SpreadProjectile : Projectile {
         end = new Color(start.r, start.g, start.b, 0.0f);
     }
 
-    protected virtual void Update() {
+	protected override void Update() {
         base.Update();
 
         t += Time.deltaTime * fadeSpeed;

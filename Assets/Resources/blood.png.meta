@@ -9,12 +9,12 @@ TextureImporter:
     21300004: blood_2
     21300006: blood_3
     21300008: blood_4
-  serializedVersion: 2
+  serializedVersion: 4
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapFadeDistanceStart: 1
@@ -26,10 +26,8 @@ TextureImporter:
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 2048
@@ -40,9 +38,7 @@ TextureImporter:
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
@@ -50,12 +46,36 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 120
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: blood_0
+    - serializedVersion: 2
+      name: blood_0
       rect:
         serializedVersion: 2
         x: 0
@@ -65,16 +85,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -28, y: 58}
-        - {x: -57, y: 3}
-        - {x: -57, y: -27}
-        - {x: -40, y: -48}
-        - {x: 45, y: -48}
-        - {x: 56, y: -10}
-        - {x: 56, y: 49}
-        - {x: 38, y: 58}
-    - name: blood_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_1
       rect:
         serializedVersion: 2
         x: 120
@@ -84,32 +98,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 35, y: 50}
-        - {x: -42, y: 50}
-        - {x: -53, y: 36}
-        - {x: -53, y: -11}
-        - {x: -45, y: -52}
-        - {x: -25, y: -59}
-        - {x: 33, y: -59}
-        - {x: 49, y: -47}
-        - {x: 50, y: -30}
-        - {x: 50, y: 40}
-      - - {x: -27, y: 50}
-        - {x: -27, y: 45}
-        - {x: -26, y: 44}
-        - {x: -23, y: 44}
-        - {x: -21, y: 46}
-        - {x: -21, y: 48}
-        - {x: -22, y: 50}
-      - - {x: -22, y: 54}
-        - {x: -22, y: 52}
-        - {x: -20, y: 50}
-        - {x: -15, y: 52}
-        - {x: -15, y: 54}
-        - {x: -18, y: 57}
-        - {x: -19, y: 57}
-    - name: blood_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_2
       rect:
         serializedVersion: 2
         x: 240
@@ -119,27 +111,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 51, y: 60}
-        - {x: 7, y: 60}
-        - {x: -31, y: 55}
-        - {x: -60, y: -26}
-        - {x: -60, y: -60}
-        - {x: 7, y: -60}
-        - {x: 33, y: -31}
-        - {x: 57, y: 1}
-        - {x: 57, y: 24}
-      - - {x: 57, y: -41}
-        - {x: 59, y: -43}
-        - {x: 60, y: -43}
-        - {x: 60, y: -38}
-        - {x: 58, y: -38}
-      - - {x: 56, y: -32}
-        - {x: 58, y: -34}
-        - {x: 60, y: -33}
-        - {x: 60, y: -26}
-        - {x: 57, y: -27}
-    - name: blood_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_3
       rect:
         serializedVersion: 2
         x: 360
@@ -149,30 +124,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 16, y: -52}
-        - {x: 23, y: -60}
-        - {x: 35, y: -60}
-        - {x: 52, y: -44}
-        - {x: 48, y: -34}
-        - {x: 60, y: -13}
-        - {x: 60, y: 25}
-        - {x: 47, y: 24}
-        - {x: 44, y: 28}
-        - {x: 42, y: 28}
-        - {x: 46, y: 27}
-        - {x: 58, y: 31}
-        - {x: 60, y: 33}
-        - {x: 60, y: 55}
-        - {x: 40, y: 60}
-        - {x: -60, y: 60}
-        - {x: -60, y: -51}
-        - {x: -50, y: -60}
-        - {x: 21, y: -60}
-        - {x: 21, y: -59}
-        - {x: 18, y: -55}
-        - {x: 11, y: -48}
-    - name: blood_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: blood_4
       rect:
         serializedVersion: 2
         x: 480
@@ -182,33 +137,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -47, y: 60}
-        - {x: -47, y: -60}
-        - {x: 49, y: -60}
-        - {x: 50, y: -59}
-        - {x: 50, y: 35}
-        - {x: 48, y: 60}
-      - - {x: -58, y: 25}
-        - {x: -60, y: 23}
-        - {x: -60, y: 16}
-        - {x: -59, y: 16}
-        - {x: -54, y: 19}
-        - {x: -54, y: 23}
-        - {x: -55, y: 25}
-      - - {x: -6, y: 60}
-        - {x: -7, y: 59}
-        - {x: -7, y: 52}
-        - {x: -5, y: 50}
-        - {x: -2, y: 50}
-        - {x: 0, y: 52}
-        - {x: 0, y: 59}
-        - {x: -1, y: 60}
-      - - {x: -21, y: 54}
-        - {x: -18, y: 55}
-        - {x: -18, y: 58}
-        - {x: -21, y: 59}
-        - {x: -23, y: 57}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 
