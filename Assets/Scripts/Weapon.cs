@@ -11,20 +11,17 @@ public class Weapon : MonoBehaviour {
 
     private Animator animator;
 
-	// Use this for initialization
 	void Start () {
         animator = GetComponent<Animator>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        animator.SetInteger("animState", 0);
-        
-    }
 
     public void Fire() {
         animator.SetInteger("animState", 1);
     }
+
+	public void StopFiring() {
+		animator.SetInteger("animState", 0);
+	}
 
     void OnShoot() {
         if (projectile) {

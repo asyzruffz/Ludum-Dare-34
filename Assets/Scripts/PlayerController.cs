@@ -3,12 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : Controller {
     
-    // Use this for initialization
     void Start () {
 	
 	}
 	
-	// Update is called once per frame
 	void Update () {
         cursor = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -16,7 +14,6 @@ public class PlayerController : Controller {
 			SceneManager.LoadScene ("Menu");
         }
 
-        //if (Input.GetKey("space")) {
         if (Input.GetMouseButton(1)) {
             moving = true;
         } else {
@@ -25,8 +22,7 @@ public class PlayerController : Controller {
 
         if (Input.GetMouseButton(0)) {
             firing = true;
-        }
-        else {
+        } else {
             firing = false;
         }
 

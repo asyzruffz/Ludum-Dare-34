@@ -9,24 +9,24 @@ public class Character : MonoBehaviour {
     public bool isNpc;
     public Weapon weapon;
     
-    //private Animator animator;
-    private Controller controller;
+	[HideInInspector]
+	public Controller controller;
 
     void Start() {
-        if(isNpc)
-            controller = GetComponent<NpcController>();
-        else
-            controller = GetComponent<PlayerController>();
+		if (isNpc) {
+			controller = GetComponent<NpcController> ();
+		} else {
+			controller = GetComponent<PlayerController> ();
+		}
     }
 
-    // Update is called once per frame
     void Update() {
         if (controller.moving) {
             GetComponent<Rigidbody2D>().AddForce(controller.direction * force);
 
-            float currentSpeed = GetComponent<Rigidbody2D>().velocity.magnitude;
+			Vector2 currentVelocity = GetComponent<Rigidbody2D>().velocity;
+			float currentSpeed = currentVelocity.magnitude;
             if (currentSpeed >= maxSpeed) {
-                Vector2 currentVelocity = GetComponent<Rigidbody2D>().velocity;
                 currentVelocity.Normalize();
                 GetComponent<Rigidbody2D>().velocity = currentVelocity * maxSpeed;
             }
@@ -35,22 +35,12 @@ public class Character : MonoBehaviour {
             GetComponent<Rigidbody2D>().angularVelocity *= skidMultiplier;
         }
 
-        if (controller.firing) {
-            if(weapon) {
-                weapon.Fire();
-            }
-        }
-    }
-
-    public Controller Controller
-    {
-        get
-        {
-            return this.controller;
-        }
-        set
-        {
-            this.controller = value;
+		if (weapon) {
+			if (controller.firing) {
+				weapon.Fire ();
+			} else {
+				weapon.StopFiring ();
+			}
         }
     }
 }

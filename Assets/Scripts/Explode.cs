@@ -50,7 +50,7 @@ public class Explode : MonoBehaviour {
     void Reincarnate(GameObject newBody) {
         PlayerController pc = newBody.AddComponent<PlayerController>();
         Destroy(newBody.GetComponent("NpcController"));
-        newBody.GetComponent<Character>().Controller = pc;
+        newBody.GetComponent<Character>().controller = pc;
     }
 
     IEnumerator BackToMenu() {
