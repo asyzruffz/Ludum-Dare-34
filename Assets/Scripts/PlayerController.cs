@@ -10,10 +10,6 @@ public class PlayerController : Controller {
 	void Update () {
         cursor = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetKey("escape")) {
-			SceneManager.LoadScene ("Menu");
-        }
-
         if (Input.GetMouseButton(1)) {
             moving = true;
         } else {
